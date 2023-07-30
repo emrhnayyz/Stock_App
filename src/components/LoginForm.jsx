@@ -1,21 +1,18 @@
-import { Button } from "@mui/material"
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
+import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-import { Form } from "formik"
-import { useSelector } from "react-redux"
-import { object, string } from "yup"
+import { Form } from "formik";
+import { object, string } from "yup";
 
 export const loginScheme = object({
   email: string()
     .email("Lutfen valid bir email giriniz")
     .required("Email zorunludur"),
-  password: string()
-    .required("password zorunludur")
-})
+  password: string().required("password zorunludur"),
+});
 
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
-  const { loading } = useSelector((state) => state.auth)
   return (
     <Form>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -43,17 +40,12 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
           helperText={touched.password && errors.password}
           error={touched.password && Boolean(errors.password)}
         />
-        <Button
-          loading={loading}
-          loadingPosition="center"
-          variant="contained"
-          type="submit"
-        >
+        <Button variant="contained" type="submit">
           Submit
         </Button>
       </Box>
     </Form>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

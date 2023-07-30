@@ -56,14 +56,15 @@ const Register = () => {
               last_name: "",
               email: "",
               password: "",
+              password2:"",
             }}
             validationSchema={registerSchema}
             onSubmit={(values, actions) => {
-              register({ ...values, password2: values.password });
+              register(values);
               actions.resetForm();
-              actions.setSubmitting(false);
             }}
-            component={props => <RegisterForm {...props} />}></Formik>
+            component={props => <RegisterForm {...props} />}>
+            </Formik>
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/">Do you have an account?</Link>
           </Box>
