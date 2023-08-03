@@ -5,7 +5,7 @@ import { Button, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import BrandCard from "../components/BrandCard";
 import BrandModal from "../components/modals/BrandModal";
-import { flex } from "../styles/globalStyle";
+import { flexCenter } from "../styles/globalStyle";
 import loadingGif from "../assets/loading.gif";
 
 const Brands = () => {
@@ -44,7 +44,7 @@ const Brands = () => {
         info={info}
         setInfo={setInfo}
       />
-      <Grid container sx={flex}>
+      <Grid container sx={flexCenter} mt={3}>
         {loading ? (
           <img src={loadingGif} alt="loading..." height={500} />
         ) : (

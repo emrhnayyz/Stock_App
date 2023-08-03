@@ -140,7 +140,8 @@ const Sales = () => {
           autoHeight
           rows={sales}
           columns={columns}
-          pageSize={10}
+          pageSize={5}
+          pageSizeOptions={[5, 10, 25, 50]}
           slots={{
             toolbar: GridToolbar,
           }}

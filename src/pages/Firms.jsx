@@ -8,7 +8,7 @@ import { Button, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import FirmCard from "../components/FirmCard";
 import FirmModal from "../components/modals/FirmModal";
-import { flex } from "../styles/globalStyle";
+import { flexCenter } from "../styles/globalStyle";
 
 const Firms = () => {
   // const dispatch = useDispatch();
@@ -73,7 +73,7 @@ const Firms = () => {
         info={info}
         setInfo={setInfo}
       />
-      <Grid container sx={flex}>
+      <Grid container sx={flexCenter} mt={3}>
         {firms?.map(firm => (
           <Grid item key={firm.id}>
             <FirmCard firm={firm} handleOpen={handleOpen} setInfo={setInfo} />
